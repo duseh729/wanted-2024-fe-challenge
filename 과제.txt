@@ -1,0 +1,43 @@
+1. Virtual DOM의 개념과 동작 방식에 대해 설명해주세요.
+Virtual DOM은 실제 DOM을 모방한 가상 DOM을 구성한 것이다.
+가상의 DOM을 구성해 실제 DOM과 달라진 부분을 리렌더링 하는 방식으로 사용한다.
+
+2. React Hooks은 무엇이며 어떻게 사용되나요?
+- useState, useEffect 등 React Hooks에 대해 간략히 소개하고,
+- 클래스 컴포넌트와 함수형 컴포넌트의 차이점에 대해 설명해보세요.
+리액트 훅은 클래스 컴포넌트에서 사용하던 코드를 작성할 필요없이 함수형 컴포넌트에서 다양한 기능을 사용하게 해주는 라이브러리다.
+클래스 컴포넌트보다 함수형 컴포넌트가 작성이 더 간편하다.
+hook은 함수형 컴포넌트에서만 사용이 가능하다.
+클래스 컴포넌트에는 render()가 필수적으로 사용되어야 한다.
+함수형 컴포넌트는 메모리도 적게 사용하고, 빌드 후 파일 크기도 적게 차지한다.
+
+3. React Router의 주요 기능과 사용법에 대해 설명해주세요.
+서로 다른 컴포넌트들의 주소에 따라 컴포넌트 배치를 변경하는 작업을 Routing이라 하는데
+React Router는 이를 편리하게 해주는 라이브러리다.
+라우팅 기능, 경로 매칭 기능, 경로 변경 기능 등 크게 3가지 기능이 있다.
+<BrowserRouter>로 라우터 역할을 담당한다.
+<Routes><Route>로 경로를 매칭해준다.
+<Link>로 경로를 변경해준다. 
+
+4. 아래는 상품의 가격이 담긴 객체 배열입니다.
+const products = [
+    {id: 1, product: 'Laptop', price: 7200},
+    {id: 2, product: 'Headphones', price: 6000},
+    {id: 3, product: 'Mouse', price: 2000},
+    {id: 4, product: 'keyboard', price: 4200},
+    {id: 5, product: 'desktop', price: 10800},
+]
+// price가 높은 순으로 정렬된 List를 반환하는 함수를 작성해주세요.
+const sortByHighPrice = (products) => {
+  return products.sort((a, b) => b.price - a.price);
+};
+
+// price가 6000 이상인 제품들의 인덱스를 찾아, 해당 제품들의 이름을 배열로 반환하는 함수를 작성해주세요
+const priceMoreThan6000 = (products) => {
+  const temp = products.filter((product) => product.price >= 6000);
+  const temp2 = [];
+  for (let i of temp) {
+    temp2.push(i.product);
+  }
+  return temp2;
+};
